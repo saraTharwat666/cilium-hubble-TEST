@@ -1,0 +1,14 @@
+# Create Cluster 
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080  # port inside Cluster  , The same port in frontend service 
+        hostPort: 8080        # LocalHost
+        protocol: TCP
+
+networking:
+  disableDefaultCNI: true  # The default CNI is kindnet. we don't need it now 
+  kubeProxyMode: none     # Stop  kube-proxy 

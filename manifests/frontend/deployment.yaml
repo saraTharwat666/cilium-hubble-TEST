@@ -1,0 +1,49 @@
+
+# Frontend Service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: default
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+  spec:
+
+      image: docker.io/library/nginx:alpine
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 80
+
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
