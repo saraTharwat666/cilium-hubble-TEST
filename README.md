@@ -1,4 +1,4 @@
-![Architecture](https://github.com/cilium/hubble)
+![Architecture](https://imgs.search.brave.com/msFHxgewWk-UT_jwcHfNoGHw3S_WpRGHlSGk-A7gp8I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naXRo/dWIuY29tL2NpbGl1/bS9odWJibGUvcmF3/L21haW4vRG9jdW1l/bnRhdGlvbi9pbWFn/ZXMvaHViYmxlX2Fy/Y2gucG5n)
 
 # Cilium & Hubble Lab 🐝
 
